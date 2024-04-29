@@ -49,7 +49,7 @@ function displayWeather(data) {
     const temperature = Math.round(data.main.temp - 273.15);
     const description = data.weather[0].description;
     const humidity = data.main.humidity;
-    const precipitationType = getPrecipitationType(data.weather[0].main);
+    const precipitation = getPrecipitationType(data.weather[0].main);
     const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
@@ -58,7 +58,7 @@ function displayWeather(data) {
         `<p>${cityName}</p>
         <p>${description}</p>
         <p>Humidity: ${humidity}%</p>
-        <p>Precipitation Type: ${precipitationType}</p>`;
+        <p>Precipitation: ${precipitation}%</p>`;
        
 
     tempDivinfo.innerHTML = temperatureHTML;
