@@ -80,7 +80,7 @@ function getPrecipitation(main) {
         case 'Thunderstorm':
             return '30';
         default:
-            return '10';
+            return '9';
     }
 }
 
