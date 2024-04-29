@@ -49,7 +49,7 @@ function displayWeather(data) {
     const temperature = Math.round(data.main.temp - 273.15);
     const description = data.weather[0].description;
     const humidity = data.main.humidity;
-    const precipitation = getPrecipitationType(data.weather[0].main);
+    const precipitation = getPrecipitation(data.weather[0].main);
     const iconCode = data.weather[0].icon;
     const iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
@@ -69,18 +69,18 @@ function displayWeather(data) {
     showImage();
 }
 
-function getPrecipitationType(main) {
+function getPrecipitation(main) {
     switch (main) {
         case 'Rain':
-            return 'Rain';
+            return '90';
         case 'Snow':
-            return 'Snow';
+            return '70';
         case 'Drizzle':
-            return 'Drizzle';
+            return '40';
         case 'Thunderstorm':
-            return 'Thunderstorm';
+            return '30';
         default:
-            return 'Unknown';
+            return '10';
     }
 }
 
